@@ -1,12 +1,13 @@
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { SafeAreaView, View, StyleSheet, StatusBar } from 'react-native';
 import React from 'react';
-import LoaderScreen from './src/screens/LoaderScreen';
+import BottomTabBar from './src/navigation/BottomTabBar';
 
 const App = () => {
   return (
     <SafeAreaView>
+      <StatusBar backgroundColor={'#FFC4B6'} barStyle='dark-content' />
       <View style={styles.container}>
-        <LoaderScreen />
+        <BottomTabBar />
       </View>
     </SafeAreaView>
   )
@@ -14,8 +15,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
-    height: "100%"
+    backgroundColor: "#fff",
+    height: "100%",
   }
 })
 

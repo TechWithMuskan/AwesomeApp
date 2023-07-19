@@ -25,7 +25,7 @@ export default function Main() {
   const theme = colorScheme === 'dark' ? DarkTheme : LightTheme;
 
   return (
-    <PaperProvider theme={theme}>
+    <PaperProvider>
       <App />
     </PaperProvider>
   );
