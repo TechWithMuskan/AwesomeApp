@@ -1,24 +1,27 @@
 import React from 'react';
 import {BottomNavigation} from 'react-native-paper';
-import Music from '../screens/Music';
-import Album from '../screens/Album';
-import Recents from '../screens/Recents';
-import Notifications from '../screens/Notifications';
+import HomeScreen from '../health/HomeScreen';
+import Journal from '../health/Journal';
+import Profile from '../health/Profile';
 
 const routes = [
   {
-    key: 'music',
-    title: 'Favorites',
+    key: 'home',
+    title: 'Home',
     focusedIcon: 'heart',
-    unfocusedIcon: 'heart-outline',
+    unfocusedIcon: 'google-fit',
   },
-  {key: 'albums', title: 'Albums', focusedIcon: 'album'},
-  {key: 'recents', title: 'Recents', focusedIcon: 'history'},
   {
-    key: 'notifications',
-    title: 'Notifications',
-    focusedIcon: 'bell',
-    unfocusedIcon: 'bell-outline',
+    key: 'journal',
+    title: 'Activities',
+    focusedIcon: 'clock',
+    unfocusedIcon: 'clock-outline',
+  },
+  {
+    key: 'account',
+    title: 'Account',
+    focusedIcon: 'account',
+    unfocusedIcon: 'account-outline',
   },
 ];
 
@@ -26,10 +29,9 @@ const BottomTabBar = () => {
   const [index, setIndex] = React.useState(0);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: () => <Music />,
-    albums: () => <Album />,
-    recents: () => <Recents />,
-    notifications: () => <Notifications />,
+    home: () => <HomeScreen />,
+    journal: () => <Journal />,
+    account: () => <Profile />,
   });
 
   return (
@@ -37,6 +39,7 @@ const BottomTabBar = () => {
       navigationState={{index, routes}}
       onIndexChange={setIndex}
       renderScene={renderScene}
+      barStyle={{backgroundColor: '#f6ede3'}}
     />
   );
 };

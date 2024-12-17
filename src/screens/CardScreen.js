@@ -1,23 +1,30 @@
-import * as React from 'react';
-import {Avatar, Card, IconButton} from 'react-native-paper';
-import TopBar from '../components/TopBar';
+import {View, Text} from 'react-native';
+import React from 'react';
+import {Avatar, Button, Card} from 'react-native-paper';
 
-const MyComponent = () => {
+const LeftContent = props => <Avatar.Icon {...props} icon="folder" />;
+
+const CardScreen = () => {
   return (
-    <>
-      <TopBar title="Contained Button" />
-      <Card>
+    <View>
+      <Card mode="contained">
         <Card.Title
           title="Card Title"
           subtitle="Card Subtitle"
-          left={props => <Avatar.Icon {...props} icon="folder" />}
-          right={props => (
-            <IconButton {...props} icon="dots-vertical" onPress={() => {}} />
-          )}
+          left={LeftContent}
         />
+        <Card.Content>
+          <Text variant="titleLarge">Card title</Text>
+          <Text variant="bodyMedium">Card content</Text>
+        </Card.Content>
+        <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+        <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+        </Card.Actions>
       </Card>
-    </>
+    </View>
   );
 };
 
-export default MyComponent;
+export default CardScreen;
