@@ -1,13 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
-import PaperIcon from './src/screens/PaperIcon';
+import {View, StatusBar} from 'react-native';
+import ToDoListScreen from './src/screens/ToDoListScreen';
 
 const App = () => {
   return (
-    <View>
-      <PaperIcon />
-    </View>
-  )
-}
+    <>
+      <StatusBar backgroundColor="#000" barStyle="light-content" />
+      <View>
+        <ToDoListScreen />
+      </View>
+    </>
+  );
+};
 
 export default App;
